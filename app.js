@@ -11,7 +11,7 @@ app.listen(3000, (err) => {
     if (err) {
         console.log(err);
     }
-    console.log('App is listening on http://localhost:3000');
+    console.log('App is listening on');
 });
 
 
