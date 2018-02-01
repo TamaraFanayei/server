@@ -5,29 +5,60 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" type="text/css" href="style.css">
     <title>Document</title>
 </head>
+<div id="wrapper">
 
-<body>
+    <body>
 
-    <h1>Det virker stadig</h1>
+        <h1>Det her er api/tamara med h1</h1>
 
-    <script>
+        <h2>Det her er api/test med h2</h2>
 
-        fetch('http://localhost:3000/api/tamara')
-            .then(response => {
-                console.log(response);
-                return response.json();
-            }).then(json => {
-                console.log(json);
-            })
+        <h3>Det her er api/fanayei med h3</h3>
 
-    </script>
+        <h4>Det her er api/espander med h4</h4>
+
+        <script>
+
+            fetch('http://localhost:3000/api/tamara')
+                .then(response => {
+                    console.log(response);
+                    return response.json();
+                }).then(json => {
+                    console.log(json);
+                })
+
+            fetch('http://localhost:3000/api/test')
+                .then(response => {
+                    console.log(response);
+                    return response.json();
+                }).then(json => {
+                    console.log(json);
+                })
+
+            fetch('http://localhost:3000/api/fanayei')
+                .then(response => {
+                    console.log(response);
+                    return response.json();
+                }).then(json => {
+                    console.log(json);
+                })
+
+            fetch('http://localhost:3000/api/espander')
+                .then(response => {
+                    console.log(response);
+                    return response.json();
+                }).then(json => {
+                    console.log(json);
+                })
+
+        </script>
 
 
 
-
-
-</body>
+    </body>
+</div>
 
 </html>
