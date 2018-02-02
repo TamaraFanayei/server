@@ -20,6 +20,16 @@
 
         <h4>Det her er api/espander med h4</h4>
 
+        <form>
+            <p>Fornavn:
+                <input type="text" name="fornavn">
+            </p>
+            <p>Efternavn:
+                <input type="text" name="efternavn">
+            </p>
+        </form>
+        <button>Send</button>
+
         <script>
 
             fetch('http://localhost:3000/api/tamara')
@@ -53,6 +63,40 @@
                 }).then(json => {
                     console.log(json);
                 })
+
+            document.querySelector('button').addEventListener('click', (event) => {
+                let form = document.querySelector('form');
+
+                let form = document.querySelector('form');
+
+                let submitSettings = {
+                    method: 'POST',
+                    headers: new Headers({
+                        'Content-Type': 'application/json'
+                    }),
+                    body: JSON.stringify({
+                        fornavn: form.fornavn.value,
+                        efternavn: form.efternavn.value
+                    })
+                }
+
+                let form = document.querySelector('form');
+
+
+
+                fetch('http://localhost:3000/api/form', submitSettings)
+                    .then(response => {
+                        return response.json();
+                    })
+                    .then(json => {
+                        console.log(json);
+                    })
+                    .catch(error => {
+                        if (error) {
+                            console.log(error);
+                        }
+                    })
+            });
 
         </script>
 
