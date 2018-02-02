@@ -24,6 +24,8 @@ app.get('/api/espander', (req, res) => {
 app.get('/api/form', (req, res) => {
     res.json({ andet: "farvel" });
 });
+
+
 //en måde at sende data med til vores server. Fx at gå ned i en databasa og hente en bruger, der har et bestemt id. 
 app.get('/api/test/:id', (req, res) => {  //:id bliver til req.params.id.  Den ligger det ned i et object, som vi kan arbejde med.  en 
     console.log(req.params.id);
@@ -41,4 +43,10 @@ app.listen(3000, (err) => {
 });
 
 
-
+app.post('/api/formular', (req, res) => {
+    res.json({
+        besked: "data blev modtaget",
+        fornavn: req.body.fornavn,
+        efternavn: req.body.efternavn
+    });
+});
