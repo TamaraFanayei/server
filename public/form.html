@@ -13,16 +13,18 @@
 
     <form>
         <p>Fornavn:
-            <input type="text" name="fornavn">
+            <input type="text" fornavn="fornavn">
         </p>
         <p>Efternavn:
-            <input type="text" name="efternavn">
+            <input type="text" efternavn="efternavn">
         </p>
     </form>
     <button>Send</button>
 
     <script>
         document.querySelector('button').addEventListener('click', (event) => {
+            let form = document.querySelector('form');
+
             let form = document.querySelector('form');
 
             let submitSettings = {
@@ -35,6 +37,10 @@
                     efternavn: form.efternavn.value
                 })
             }
+
+            let form = document.querySelector('form');
+
+
 
             fetch('http://localhost:3000/api/form', submitSettings)
                 .then(response => {
