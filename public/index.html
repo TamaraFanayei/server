@@ -22,10 +22,10 @@
 
         <form>
             <p>Fornavn:
-                <input type="text" name="fornavn">
+                <input type="text" fornavn="fornavn">
             </p>
             <p>Efternavn:
-                <input type="text" name="efternavn">
+                <input type="text" efternavn="efternavn">
             </p>
         </form>
         <button>Send</button>
@@ -64,9 +64,23 @@
                     console.log(json);
                 })
 
-            document.querySelector('button').addEventListener('click', (event) => {
-                let form = document.querySelector('form');
 
+
+            fetch('http://localhost:3000/api/form', submitSettings)
+                .then(response => {
+                    return response.json();
+                })
+                .then(json => {
+                    console.log(json);
+                })
+                .catch(error => {
+                    if (error) {
+                        console.log(error);
+                    }
+                })
+            });
+
+            document.querySelector('button').addEventListener('click', (event) => {
                 let form = document.querySelector('form');
 
                 let submitSettings = {
@@ -83,20 +97,6 @@
                 let form = document.querySelector('form');
 
 
-
-                fetch('http://localhost:3000/api/form', submitSettings)
-                    .then(response => {
-                        return response.json();
-                    })
-                    .then(json => {
-                        console.log(json);
-                    })
-                    .catch(error => {
-                        if (error) {
-                            console.log(error);
-                        }
-                    })
-            });
 
         </script>
 
