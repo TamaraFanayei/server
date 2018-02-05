@@ -4,10 +4,17 @@ const app = express();
 const logger = require('morgan'); //disse to linjer, er det der skal til, så så vi kan holde øje med om vi har skrevet korrekt eller om andet er gået galt undervejs.
 app.use(logger('drev')); // hvornår er det foregåret en ruquest og hvilken type request var det. 
 
+const bodyParser = require('body-parser');
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({
+    extended: true
+}));
+
+require('./routes.js')(app);
+
 app.get('/api/tamara', (req, res) => {
     res.json({ navn: "Tamara", efternavn: "Fanayei", Bopæl: "Bryggen" });
 });
-
 
 app.get('/api/test', (req, res) => {
     res.json({ text: "Hello World" });
